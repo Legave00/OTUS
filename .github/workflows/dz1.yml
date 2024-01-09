@@ -14,13 +14,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions: write-all
+    defaults:
+      run:
+        working-directory: dz1/
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
       - run: sudo apt-get update && sudo apt-get install cmake libboost-test-dev -y
-      - run: ls -la
-        working-directory: ./dz1
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
       - run: cmake --build . --target test
