@@ -19,7 +19,7 @@ jobs:
         with:
           submodules: true
       - run: sudo apt-get update && sudo apt-get install cmake libboost-test-dev -y
-      - run: cd dz1
+      - run: cd dz1/
       - run: ls -la
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
