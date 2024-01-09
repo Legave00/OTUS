@@ -7,6 +7,7 @@ on:
       - feature/github_actions
     paths:
       - dz1/**
+      - **dz1**
   workflow_dispatch:
 
 jobs:
